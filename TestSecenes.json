@@ -1,0 +1,5025 @@
+{
+	"variables": [],
+	"info": {
+		"name": "GLSTesting-APIs-GLSV2Application-TestScenarios",
+		"_postman_id": "6a052743-f399-f464-67e9-6319ee055a48",
+		"description": "GLSTesting-APIs-GLSV2Application-Test Scenarios",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GEODistance-Search-JSON",
+			"description": "",
+			"item": [
+				{
+					"name": "GeoSpatialSearch V1 MDM",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=56.48782200&long=8.58282200&dist=10000&market=ca&local=en-ca&size=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch V1 MDM with experience",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=56.48782200&long=8.58282200&dist=100000&market=ca&local=en-ca&size=5&experience=basicIdentifiers,basicStoreInfo,advanceStoreInfo",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "ca",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "Having experience for V1 MDM markets does not have any impact on response"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch V1 MDM with insufficient privilege",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=56.48782200&long=8.58282200&dist=10&market=ca&experience=basicIdentifiers,basicStoreInfo,advanceStoreInfo&local=en-ca",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "GOOGLE",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "if filter contains sections which a particular client is not etitled to then error will be returned."
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch V1 MDM without dist",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=56.48782200&long=8.58282200&market=ca&local=en-ca&size=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch V1 MDM without distance"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch V1 MDM without size",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=56.48782200&long=8.58282200&dist=10000&market=ca&local=en-ca",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch V1 MDM without size"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch V1 MDM without locale",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=56.48782200&long=8.58282200&dist=10000&market=ca&size=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch V1 MDM without locale"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch V1 MDM wihout long and lat",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?dist=10000&market=ca&local=en-ca&size=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch V1 MDM wihout long and lat"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch V1 MDM without market",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=56.48782200&long=8.58282200&dist=10000&locale=en-ca&size=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch V1 MDM without market"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch V1 MDM without experience",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=56.48782200&long=8.58282200&dist=10000&market=ca&local=en-ca&size=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch V1 MDM without experience"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch V2 MDM with experience",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=56.48782200&long=8.58282200&dist=10000&market=ca&locale=en-ca&size=5&experience=basicIdentifiers,basicStoreInfo,advanceStoreInfo",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=2.0",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch V2 MDM with insufficient privilege",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=56.48782200&long=8.58282200&dist=10&market=ca&experience=basicIdentifiers,basicStoreInfo,advanceStoreInfo,soreAreas&locale=en-ca",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=2.0",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "if filter contains sections which a particular client is not etitled to then error will be returned."
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch V2 MDM without dist",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=56.48782200&long=8.58282200&market=ca&locale=en-ca&size=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=2.0",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch V2 MDM without distance"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch V2 MDM without size",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=56.48782200&long=8.58282200&dist=10000&market=ca&locale=en-ca",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=2.0",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch V2 MDM without size"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch V2 MDM without locale",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=56.48782200&long=8.58282200&dist=10000&market=ca&size=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=2.0",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch V2 MDM without locale"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch V2 MDM wihout long and lat",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?dist=10000&market=ca&locale=en-ca&size=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=2.0",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch V2 MDM wihout long and lat"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch V2 MDM without market",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=56.48782200&long=8.58282200&dist=10000&locale=en-ca&size=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=2.0",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch V2 MDM without market"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch V2 MDM without experience",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=56.48782200&long=8.58282200&dist=10000&market=ca&locale=en-ca&size=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=2.0",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch V2 MDM without experience"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch Wihtout Version MDM with experience",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=56.48782200&long=8.58282200&dist=10000&market=ca&local=en-ca&size=5&experience=basicIdentifiers,basicStoreInfo,advanceStoreInfo",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch Wihtout Version MDM with experience"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch Wihtout Version MDM insufficient privilege ",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=56.48782200&long=8.58282200&dist=10&market=ca&experience=basicIdentifiers,basicStoreInfo,advanceStoreInfo,storeAreas&local=en-ca",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "if filter contains sections which a particular client is not etitled to then error will be returned."
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch Wihtout Version MDM without dist",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=56.48782200&long=8.58282200&market=ca&local=en-ca&size=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch V2 MDM without distance"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch Wihtout Version MDM without size",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=56.48782200&long=8.58282200&dist=10000&market=ca&locale=en-ca",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch Wihtout Version MDM without size"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch Wihtout Version MDM without locale",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=56.48782200&long=8.58282200&dist=10000&market=ca&size=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch Wihtout Version MDM without locale"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch Wihtout Version MDM wihout long and lat",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?dist=10000&market=ca&locale=en-ca&size=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch Wihtout Version MDM wihout long and lat"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch Wihtout Version MDM wihout market",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=56.48782200&long=8.58282200&dist=10000&local=en-ca&size=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch Wihtout Version MDM wihout market"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch Wihtout Version MDM wihout experience",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=56.48782200&long=8.58282200&dist=10000&market=ca&locale=en-ca&size=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch Wihtout Version MDM wihout experience"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch V1 non-MDM with experience",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=30.666182&long=-88.106416&dist=10&market=us&local=en-us&size=5&experience=basicIdentifiers",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "non-MDM markets cannot have experience QP hence error will be returned"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch V1 non-MDM without dist",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=30.666182&long=-88.106416&market=us&local=en-us&size=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch V1 non-MDM without dist"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch V1 non-MDM without size",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=30.666182&long=-88.106416&dist=10&market=us&local=en-us",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch V1 non-MDM without size"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch V1 non-MDM without locale",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=30.666182&long=-88.106416&dist=10&market=us&size=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch V1 non-MDM without locale"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch V1 non-MDM without lat long",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?dist=10&market=us&locale=en-us&size=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch V1 non-MDM without lat long"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch V1 non-MDM without market",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=30.666182&long=-88.106416&dist=10&locale=en-us&size=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch V1 non-MDM without market"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch V2 non-MDM",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=30.666182&long=-88.106416&dist=10&market=us&locale=en-us&size=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch V2 non-MDM"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch Without Version non-MDM",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=30.666182&long=-88.106416&dist=10&market=us&local=en-us&size=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch Without Version non-MDM"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch Without Version non-MDM without dist",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=30.666182&long=-88.106416&market=us&locale=en-us&size=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch Without Version non-MDM without dist"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch Without Version non-MDM without size",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=30.666182&long=-88.106416&dist=10&market=us&locale=en-us",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch Without Version non-MDM without size"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch Without Version non-MDM without locale",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=30.666182&long=-88.106416&dist=10&market=us&size=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch Without Version non-MDM without locale"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch Without Version non-MDM without  lat long",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?dist=10&market=us&locale=en-us&size=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch Without Version non-MDM without  lat long"
+					},
+					"response": []
+				},
+				{
+					"name": "GeoSpatialSearch Without Version non-MDM without market",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/geoDistanceSearch?lat=30.666182&long=-88.106416&dist=10&locale=en-us&size=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": "GeoSpatialSearch Without Version non-MDM without market"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Location-Search-JSON",
+			"description": "",
+			"item": [
+				{
+					"name": "LocationSearch V2 MDM with experience=all and with Market,locale,PazeSize",
+					"request": {
+						"url": "{{Host}}/restaurant/location/search?experience=all&market=ca&locale=en-ca&pageSize=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "CA",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": "",
+								"disabled": true
+							}
+						],
+						"body": {},
+						"description": "experience=all returns all the response blocks to which client is entitled to."
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM with experience=basicIdentifiers,basicStoreInfo,advanceStoreInfo ",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=basicIdentifiers,basicStoreInfo,advanceStoreInfo&market=ca&locale=en-ca&pageSize=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "experience=basicIdentifiers,basicStoreInfo,advanceStoreInfo  returns all the response blocks to which client is entitled to."
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM with experience insufficient privilege",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=basicStoreInfo,storeAttributes,storeAreas&query={ \"market\":\"ca\", \"locale\":\"en-ca\", \"pageSize\":5 }",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "local",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Having experience QP for MDM markets with experience insufficient privilege"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM-Insufficient Privileges",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=basicStoreInfo,storeAttributes,storeAreas&market=ca",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"pageSize\": 5,\r\n  \"locale\": \"en-dk\",\r\n  \"market\": \"dk\"\r\n}\r\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM without experience",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?market=ca&locale=en-ca&pageSize=5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "experience=all returns all the response blocks to which client is entitled to."
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM without pagesize",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=all&market=ca&locale=en-ca",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "filter=all returns all the response blocks to which client is entitled to."
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM without locale and pagesize",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=all&market=ca",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "filter=all returns all the response blocks to which client is entitled to."
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM without experience, locale and size",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?market=ca",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Size will be defaulted to 5\nexperience is absent so only basicIdentifiers will be returned\nlocale remains optional only for V2"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM without market,locale and pagesize",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=all&market=",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "filter=all returns all the response blocks to which client is entitled to."
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM with experience and  GBLNumber",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=all&market=us&gblnumber=195500291703",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "DK",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "locale",
+								"value": "en-dk",
+								"description": "",
+								"disabled": true
+							}
+						],
+						"body": {},
+						"description": "experience=all returns all the response blocks to which client is entitled to."
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 non-MDM",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?market=us",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2.0",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "local",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"pageSize\": 5,\r\n  \"locale\": \"en-us\",\r\n  \"market\": \"us\"\r\n}\r\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 non-MDM",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"us\", \"local\":\"en-us\", \"pageSize\":5 }",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "US",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "local",
+								"value": "en-us",
+								"description": "",
+								"disabled": true
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 MDM with experience",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=all&query={ \"market\":\"ca\", \"local\":\"en-ca\", \"pageSize\":1 }",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "CA",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": "",
+								"disabled": true
+							}
+						],
+						"body": {},
+						"description": "having experience QP for MDM markets on V1 format does not have any impact on the response"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 non-MDM withexperience",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=basicIdentifiers&query={ \"market\":\"us\", \"local\":\"en-us\", \"pageSize\":5 }",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "US",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "non-MDM markets having experience QP are not allowed and shall get the error response."
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 non-MDM without locale, experience and size",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"us\"}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "locale is mandatory for v1 hence should be given error"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 MDM",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"ca\", \"local\":\"en-ca\", \"pageSize\":5 }",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 MDM without locale,experience and size",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"ca\"}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "locale is mandatory for v1 format"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 non-MDM without pagesize",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"ca\", \"local\":\"en-ca\" }",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 MDM without experience and size",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"ca\", \"local\":\"en-ca\" }",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "locale is mandatory for v1 format"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 MDM without pagesize",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=all&query={ \"market\":\"ca\", \"local\":\"en-ca\" }",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "having filter QP for MDM markets on V1 format does not have any impact on the response"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 MDM without locale and pagesize",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=all&query={ \"market\":\"ca\" }",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "CA",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "having filter QP for MDM markets on V1 format does not have any impact on the response"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 MDM without locale,market and pagesize",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=all&query={ }",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "having filter QP for MDM markets on V1 format does not have any impact on the response"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 MDM without version",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"ca\", \"local\":\"en-ca\", \"pageSize\":5 }",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM without version and pagesize",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=all&market=ca&locale=en-ca",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "filter=all returns all the response blocks to which client is entitled to."
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 MDM without version experience and size",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"ca\", \"local\":\"en-ca\" }",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "locale is mandatory for v1 format"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM without version, locale and pagesize",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=all&query={ \"market\":\"ca\", \"locale\":\"en-ca\", \"pageSize\":5 }",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "having filter QP for MDM markets on V1 format does not have any impact on the response"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V MDM without market,locale and pagesize",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=all&market=",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "filter=all returns all the response blocks to which client is entitled to."
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 non-MDM without experience",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"us\", \"local\":\"en-us\", \"pageSize\":5 }",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "non-MDM markets having experience QP are not allowed and shall get the error response."
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 non-MDM without experience and market",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"locale\":\"en-us\", \"pageSize\":5 }",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "non-MDM markets having experience QP are not allowed and shall get the error response."
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 non-MDM without experience and locale",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"us\", \"pageSize\":5 }",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "non-MDM markets having experience QP are not allowed and shall get the error response."
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 non-MDM without experience and pagesize",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"us\", \"locale\":\"en-us\" }",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "non-MDM markets having experience QP are not allowed and shall get the error response."
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch without version non-MDM without experience",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"us\", \"locale\":\"en-us\", \"pageSize\":5 }",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "non-MDM markets having experience QP are not allowed and shall get the error response."
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch Without Version non-MDM without experience and market",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"local\":\"en-us\", \"pageSize\":5 }",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch Without Version non-MDM without experience and market"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch Without Version non-MDM without experience and locale",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"us\", \"pageSize\":5 }",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch Without Version non-MDM without experience and locale"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch Without Version non-MDM without experience and pagesize",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"us\", \"locale\":\"en-us\" }",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch Without Version non-MDM without experience and pagesize"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch Without Version non-MDM with experience",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=basicIdentifiers&query={ \"market\":\"us\", \"local\":\"en-us\", \"pageSize\":5 }",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "LocationSearch Without Version non-MDM with experience"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 MDM with long and latitude",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=all&query={\"market\":\"ca\",\"pageSize\":5,\"local\":\"en-ca\",\"locationCriteria\":{\"distance\":\"10\",\"longitude\":\"-79.7415\",\"latitude\":\"43.70314\"}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V1 MDM with long and latitude"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM with long and latitude",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=all&query={\"market\":\"ca\",\"pageSize\":5,\"local\":\"en-ca\",\"locationCriteria\":{\"distance\":\"10\",\"longitude\":\"-79.7415\",\"latitude\":\"43.70314\"}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2.0",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V1 MDM with long and latitude"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch Without version MDM with long and latitude",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=all&query={\"market\":\"ca\",\"pageSize\":5,\"local\":\"en-ca\",\"locationCriteria\":{\"distance\":\"10\",\"longitude\":\"-79.7415\",\"latitude\":\"43.70314\"}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch Without version MDM with long and latitude"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 MDM with GBLNumber",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"dk\", \"local\":\"en-dk\", \"pageSize\":5,\"GBLNumber\": 195500555812}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V1 MDM with GBLNumber"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 MDM with storeUniqueId(identifierValue)",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"ca\", \"local\":\"en-ca\", \"pageSize\":5, \"storeUniqueId\":40491 }",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V1 MDM with storeUniqueId "
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 MDM with storeUniqueIdType(identifierType)",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"au\", \"local\":\"en-au\", \"pageSize\":5, \"storeUniqueIdType\":\"NSN\"}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V1 MDM with storeUniqueIdType(identifierType\r\n)"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 MDM with generalStoreStatusCode",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"dk\", \"local\":\"en-dk\", \"pageSize\":5, \"generalStoreStatusCode\":\"OPEN\"}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V1 MDM with generalStoreStatusCode"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 MDM with currentStoreStatusCode",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"dk\", \"local\":\"en-dk\", \"pageSize\":5, \"currentStoreStatusCode\":\"OPEN\"}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V1 MDM with currentStoreStatusCode\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 MDM with type",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"ca\", \"local\":\"en-ca\", \"pageSize\":5, \"type\":\"PARKINGAREA\"}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V1 MDM with type\r\n\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 MDM with stateProvince",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={\"market\":\"ca\",\"pageSize\":5,\"local\":\"en-ca\",\"locationCriteria\":{\"stateProvince\": \"Quebec\"}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V1 MDM with stateProvince\r\n\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 MDM with cityTown",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={\"market\":\"ca\",\"pageSize\":5,\"local\":\"en-ca\",\"locationCriteria\":{\"cityTown\": \"COALDALE\"}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V1 MDM with cityTown\r\n\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 MDM with zipCode(postalZip)",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={\"market\":\"ca\",\"pageSize\":5,\"local\":\"en-ca\",\"locationCriteria\":{\"zipCode\": \"T1M0C1\"}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V1 MDM with zipCode(postalZip)"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 MDM with country",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={\"market\":\"ca\",\"pageSize\":5,\"local\":\"en-ca\",\"locationCriteria\":{\"country\": \"Canada\"}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V1 MDM with country"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch Without Version MDM with GBLNumber",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"dk\", \"local\":\"en-dk\", \"pageSize\":5,\"GBLNumber\": 195500555812}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch Without Version MDM with GBLNumber"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch Without Version MDM with storeUniqueId(identifierValue)",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"ca\", \"local\":\"en-ca\", \"pageSize\":5, \"storeUniqueId\":40491 }",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch Without Version MDM with storeUniqueId(identifierValue)"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch Without Version MDM with storeUniqueIdType(identifierType)",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"ca\", \"local\":\"en-ca\", \"pageSize\":5, \"storeUniqueIdType\":\"NSN\"}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch Without Version MDM with storeUniqueIdType(identifierType)"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch Without Version MDM with  generalStoreStatusCode",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"dk\", \"local\":\"en-dk\", \"pageSize\":5, \"generalStoreStatusCode\":\"OPEN\"}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch Without Version MDM with  generalStoreStatusCode"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch Without Version MDM with currentStoreStatusCode",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"dk\", \"local\":\"en-dk\", \"pageSize\":5, \"currentStoreStatusCode\":\"OPEN\"}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch Without Version MDM with currentStoreStatusCode"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch Without Version MDM with type",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"ca\", \"local\":\"en-ca\", \"pageSize\":5, \"type\":\"PARKINGAREA\"}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch Without Version MDM with type"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch Without Version MDM with stateProvince",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={\"market\":\"ca\",\"pageSize\":5,\"local\":\"en-ca\",\"locationCriteria\":{\"stateProvince\": \"Quebec\"}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch Without Version MDM with stateProvince"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch Without Version MDM with cityTown",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={\"market\":\"ca\",\"pageSize\":5,\"local\":\"en-ca\",\"locationCriteria\":{\"cityTown\": \"COALDALE\"}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V1 MDM with cityTown"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch Without Version MDM with zipCode(postalZip)",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={\"market\":\"ca\",\"pageSize\":5,\"local\":\"en-ca\",\"locationCriteria\":{\"zipCode\": \"T1M0C1\"}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch Without Version MDM with zipCode(postalZip)"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch Without Version MDM with country",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={\"market\":\"ca\",\"pageSize\":5,\"local\":\"en-ca\",\"locationCriteria\":{\"subdivision\": \"QC\"}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch Without Version MDM with country"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 MDM with subdivision",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={\"market\":\"ca\",\"pageSize\":5,\"local\":\"en-ca\",\"locationCriteria\":{\"subdivision\": \"QC\"}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V1 MDM with subdivision"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch Without version MDM with subdivision",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={\"market\":\"ca\",\"pageSize\":5,\"local\":\"en-ca\",\"locationCriteria\":{\"subdivision\": \"QC\"}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch Without version MDM with subdivision"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 non-MDM with GBLNumber",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"us\", \"local\":\"en-us\", \"pageSize\":5,\"GBLNumber\": 195500243887}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V1 non-MDM with GBLNumber"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 MDM without country",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={\"market\":\"ca\",\"pageSize\":5,\"local\":\"en-ca\",\"locationCriteria\":{\"country\": \"Canada\"}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V1 MDM without country"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 MDM without GBLNumber",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"dk\", \"local\":\"en-dk\", \"pageSize\":5,\"GBLNumber\": 195500555812}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V1 MDM without GBLNumber"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 non-MDM with storeUniqueIdType",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"ca\", \"local\":\"en-ca\", \"pageSize\":5, \"storeUniqueIdType\":\"NSN\"}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V1 non-MDM with storeUniqueIdType"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V1 non-MDM with generalStoreStatusCode",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?query={ \"market\":\"us\", \"local\":\"en-us\", \"pageSize\":5, \"generalStoreStatusCode\":\"OPEN\"}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V1 non-MDM with generalStoreStatusCode"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM with storeUniqueId(identifierValue)",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?market=ca&storeUniqueId=40491",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "DK",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-dk",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V2 MDM with storeUniqueId(identifierValue)"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM with storeUniqueIdType(identifierType)",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?market=ca&storeUniqueIdType=NSN",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "DK",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-dk",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V2 MDM with storeUniqueIdType(identifierType)"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM with  generalStoreStatusCode(generalStatus.status)",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=all&market=ca&generalStoreStatusCode=OPEN",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "DK",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-dk",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V2 MDM with  generalStoreStatusCode(generalStatus.status)"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM currentStoreStatusCode(currentStatus.status)",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?market=ca&currentStoreStatusCode=OPEN",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "DK",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-dk",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V2 MDM currentStoreStatusCode(currentStatus.status)"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM with cityTown(cityTown)",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?market=ca&cityTown=STETTLER",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "DK",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-dk",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V2 MDM with cityTown(cityTown)"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM with  partyname(partyname)",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?market=ca&partyname=",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "DK",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-dk",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V2 MDM with  partyname(partyname)"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM with stateProvince(stateProvince)",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?market=ca&stateProvince=Alberta",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "DK",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-dk",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V2 MDM with stateProvince(stateProvince)"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM with generalStoreStatusCode(generalStatus.status)",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=all&market=ca&generalStoreStatusCode=OPEN",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "DK",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-dk",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V2 MDM with generalStoreStatusCode(generalStatus.status)"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM with  zipCode(postalZip)",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=all&market=ca&zipCode=T0C 2L2",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "DK",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-dk",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V2 MDM with  zipCode(postalZip)"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM with region(region)",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?market=ca&region",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "DK",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-dk",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V2 MDM with region(region)"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM with  area(area)",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=all&market=ca&area",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "DK",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-dk",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V2 MDM with  area(area)"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM with county(county)",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=all&market=ca&county",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "DK",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-dk",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V2 MDM with county(county)"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM with branch(branch)",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?market=ca&branch",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "DK",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-dk",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V2 MDM with branch(branch)"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM with district(district)",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=all&market=dk&district",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "DK",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-dk",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V2 MDM with district(district)"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM with subdivision(subdivision)",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=all&market=ca&subdivision=AB",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "DK",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-dk",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V2 MDM with subdivision(subdivision)"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM with type(type)",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=all&market=ca&locale=en-ca&pageSize=5&&type=BAKERY",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-CA",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V2 MDM with type(type)"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM with lat,long and type(type)",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=all&latitude=43.75781000&longitude=-79.22884000&dist=10&market=ca&locale=en-ca&size=5&type=BAKERY",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "CA",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "locale",
+								"value": "en-CA",
+								"description": "",
+								"disabled": true
+							}
+						],
+						"body": {},
+						"description": "LocationSearch V2 MDM with type(type)"
+					},
+					"response": []
+				},
+				{
+					"name": "LocationSearch V2 MDM with cityTown",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/search?experience=all&market=ca&locale=en-ca&size=5&cityTown=COALDALE",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mcd-sourceapp",
+								"value": "GMA",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-CA",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "LocationSearch V2 MDM with cityTown"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MarketAttributes-JSON",
+			"description": "JSON formate",
+			"item": [
+				{
+					"name": "MarketAttributeSearch MDM",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/marketAttributes/CA",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "MarketAttributeSearch non-MDM",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/marketAttributes/US",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "MarketAttributeSearch MDM QP",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/marketAttributes?market=CA",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "MarketAttributeSearch non-MDM QP",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/marketAttributes?market=US",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "MarketAttributeSearch MDM without Market",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/marketAttributes",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "MarketAttributeSearch MDM QP without market",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/marketAttributes?market=",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "MarketId",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "MarketAttributeSearch non-MDM without market",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/marketAttributes",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "MarketAttributeSearch non-MDM QP without param",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/marketAttributes?market=",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "US",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-us",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SearchByStoreID -JSON",
+			"description": "StoreID -JSON ",
+			"item": [
+				{
+					"name": "SearchByStoreID MDM with all params V1",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/searchByStoreId?market=ca&locale=en-ca&storeUniqueId=22249,200&storeUniqueIdType=NSN&pageSize=10&experience=all",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByStoreID MDM with all params V2",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/searchByStoreId?market=ca&locale=en-ca&storeUniqueId=22249,200&storeUniqueIdType=NSN&pageSize=10&experience=all",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByStoreID MDM with insufficient privileges",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/searchByStoreId?market=ca&locale=en-ca&storeUniqueId=22249,200&storeUniqueIdType=NSN&pageSize=10&experience=storeArea",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByStoreID MDM without market",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/searchByStoreId?locale=en-ca&storeUniqueId=22249,200&storeUniqueIdType=NSN&pageSize=10&experience=all",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByStoreID MDM without locale",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/searchByStoreId?market=ca&storeUniqueId=22249,200&storeUniqueIdType=NSN&pageSize=10&experience=all",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByStoreID MDM without storeUniqueId",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/searchByStoreId?market=ca&locale=en-ca&storeUniqueIdType=NSN&pageSize=10&experience=all",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByStoreID MDM without storeUniqueIdType",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/searchByStoreId?market=ca&locale=en-ca&storeUniqueId=22249,200&pageSize=10&experience=all",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByStoreID MDM without pageSize V1",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/searchByStoreId?market=ca&locale=en-ca&storeUniqueId=22249,200&storeUniqueIdType=NSN&experience=all",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByStoreID MDM without pageSize V2",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/searchByStoreId?market=ca&locale=en-ca&storeUniqueId=22249,200&storeUniqueIdType=NSN&experience=all",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByStoreID MDM without experience V1",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/searchByStoreId?market=ca&locale=en-ca&storeUniqueId=22249,200&storeUniqueIdType=NSN&pageSize=10",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByStoreID MDM without experience V2",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/searchByStoreId?market=ca&locale=en-ca&storeUniqueId=22249,200&storeUniqueIdType=NSN&pageSize=10",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByStoreID MDM with negative pageSize",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/searchByStoreId?market=ca&locale=en-ca&storeUniqueId=22249,200&storeUniqueIdType=NSN&pageSize=-1&experience=all",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByStoreID MDM without market , locale",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/searchByStoreId?storeUniqueId=22249,200&storeUniqueIdType=NSN&pageSize=10&experience=all",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByStoreID MDM without storeUniqueId,storeUniquetype",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/searchByStoreId?market=ca&locale=en-ca&pageSize=10&experience=all",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByStoreID NON-MDM with all params",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/searchByStoreId?market=us&locale=en-us&storeUniqueId=77,200&storeUniqueIdType=NatlStrNumber&pageSize=10",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByStoreID NON-MDM with experience",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/searchByStoreId?market=us&locale=en-us&storeUniqueId=77,200&storeUniqueIdType=NatlStrNumber&pageSize=10&experience=all",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByStoreID NON-MDM with v2 format",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/searchByStoreId?market=us&locale=en-us&storeUniqueId=77,200&storeUniqueIdType=NatlStrNumber&pageSize=10",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=2",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByStoreID NON-MDM without market",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/searchByStoreId?market=us&locale=en-us&storeUniqueId=77,200&storeUniqueIdType=NatlStrNumber&pageSize=10",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByStoreID NON-MDM without locale",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/searchByStoreId?market=us&locale=en-us&storeUniqueId=77,200&storeUniqueIdType=NatlStrNumber&pageSize=10",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByStoreID NON-MDM without storeUniqueId",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/searchByStoreId?market=us&locale=en-us&storeUniqueIdType=NatlStrNumber&pageSize=10",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByStoreID NON-MDM without storeUniqueIdType",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/searchByStoreId?market=us&locale=en-us&storeUniqueId=77,200&pageSize=10",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByStoreID NON-MDM without pageSize",
+					"request": {
+						"url": "dev-glsv2api.cloudhub.io/restaurant/location/searchByStoreId?market=us&locale=en-us&storeUniqueId=77,200&storeUniqueIdType=NatlStrNumber",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;version=1",
+								"description": ""
+							},
+							{
+								"key": "mcd-sourceapp",
+								"value": "DEP",
+								"description": ""
+							},
+							{
+								"key": "market",
+								"value": "CA",
+								"description": ""
+							},
+							{
+								"key": "locale",
+								"value": "en-ca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"local\":\"en-ca\",\r\n  \"pageSize\":5,\r\n  \"storeUniqueId\": \"\",\r\n  \"storeUniqueIdType\": \"\",\r\n  \"GBLNumber\": \"\",\r\n  \"generalStoreStatusCode\": \"\",\r\n  \"currentStoreStatusCode\": \"\",\r\n  \"partyName\": \"\",\r\n  \"locationCriteria\": {\r\n    \"latitude\": 51.073,\r\n    \"longitude\": -114.073,\r\n    \"distance\": \"10000\"\r\n  },\r\n  \"storeAttributes\":{\r\n  \"type\": \"\",\r\n    \"description\": \"\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"\",\r\n    \"startTime\": \"\",\r\n    \"endTime\": \"\",\r\n    \"dayOfWeek\": \"\",\r\n    \"attributeClass\": \"\"\r\n  }\r\n}\r\n"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
